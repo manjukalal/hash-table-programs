@@ -4,9 +4,13 @@ import java.util.Hashtable;
 
 class HashTable {
     public static void main(String[] args) {
-        String str = " “Paranoids are not paranoid because they are paranoid but because " +
-                "they keep putting themselves deliberately into paranoid avoidable situations";
+
         Hashtable<String, Integer> hashtable = new Hashtable<>();
+
+        String str = " Paranoids are not paranoid because they are paranoid" +
+                " but because they keep putting themselves deliberately into paranoid avoidable situations";
+
+        str = str.replace("avoidable"," ");
 
         String[] words = str.split(" ");
 
