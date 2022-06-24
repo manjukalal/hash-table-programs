@@ -2,32 +2,32 @@ package com.bridgelabz;
 
 import java.util.Hashtable;
 
+class HashTable {
+    public static void main(String[] args) {
+        String str = " “Paranoids are not paranoid because they are paranoid but because " +
+                "they keep putting themselves deliberately into paranoid avoidable situations";
+        Hashtable<String, Integer> hashtable = new Hashtable<>();
 
-public class HashTable {
+        String[] words = str.split(" ");
 
-        public static void main(String[] args)
-        {
-            String str = " to be or not to be";
-            Hashtable<String, Integer>  hashtable = new Hashtable<>();
+        for (String word : words) {
 
-            String[] words = str.split(" ");
+            // Asking whether the HashMap contains the
+            // key or not. Will return null if not.
+            Integer integer = hashtable.get(word);
 
-            for (String word : words) {
+            if (integer == null)
+                // Storing the word as key and its
+                // occurrence as value in the HashMap.
+                hashtable.put(word, 1);
 
-                // Asking whether the HashMap contains the
-                // key or not. Will return null if not.
-                Integer integer = hashtable.get(word);
-
-                if (integer == null)
-
-                    hashtable.put(word, 1);
-
-                else {
-
-                    hashtable.put(word, integer + 1);
-                }
+            else {
+                // Incrementing the value if the word
+                // is already present in the HashMap.
+                hashtable.put(word, integer + 1);
             }
-            System.out.println(hashtable);
         }
+        System.out.println(hashtable);
     }
+}
 
